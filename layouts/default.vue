@@ -27,9 +27,9 @@ export default {
           title: "your info",
           route: "/",
         },
-        { step: 2, title: "select plan", route: "/selectplan" },
-        { step: 3, title: "add-ons", route: "/add-ons" },
-        { step: 4, title: "summary", route: "/summary" },
+        { step: 2, title: "select plan", route: "/step-2" },
+        { step: 3, title: "add-ons", route: "/step-3" },
+        { step: 4, title: "summary", route: "/step-4" },
       ],
     };
   },
@@ -190,7 +190,7 @@ main {
     }
         .content{
           width: 30rem;
-          height: 100%;
+          height: 90%;
         }
   }
 }

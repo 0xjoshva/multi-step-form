@@ -5,41 +5,43 @@
       <p>Please provide your name, email address, and phone number.</p>
     </div>
     <form action="">
-      <label for="name">
-        <div class="label">
-          <p>Name</p>
-          <p class="warning" v-show="emptyField">This field is required</p>
-        </div>
-        <input
-          type="text"
-          placeholder="e.g. Stephen King"
-          :class="{ redBorder: emptyField }"
-        />
-      </label>
-      <label for="email">
-        <div class="label">
-          <p>Email Address</p>
-          <p class="warning" v-show="emptyField">This field is required</p>
-        </div>
+      <div class="label-container">
+        <label for="name">
+          <div class="label">
+            <p>Name</p>
+            <p class="warning" v-show="emptyField">This field is required</p>
+          </div>
+          <input
+            type="text"
+            placeholder="e.g. Stephen King"
+            :class="{ redBorder: emptyField }"
+          />
+        </label>
+        <label for="email">
+          <div class="label">
+            <p>Email Address</p>
+            <p class="warning" v-show="emptyField">This field is required</p>
+          </div>
 
-        <input
-          type="email"
-          placeholder="e.g. stephenking@lorem.com"
-          :class="{ redBorder: emptyField }"
-        />
-      </label>
-      <label for="pnumber">
-        <div class="label">
-          <p>Phone Number</p>
-          <p class="warning" v-show="emptyField">This field is required</p>
-        </div>
-        <input
-          type="text"
-          placeholder="e.g. +27 234 567 6890"
-          :class="{ redBorder: emptyField }"
-        />
-      </label>
-      <NuxtLink to="/selectplan" class="nxtBtn">Next Step</NuxtLink>
+          <input
+            type="email"
+            placeholder="e.g. stephenking@lorem.com"
+            :class="{ redBorder: emptyField }"
+          />
+        </label>
+        <label for="pnumber">
+          <div class="label">
+            <p>Phone Number</p>
+            <p class="warning" v-show="emptyField">This field is required</p>
+          </div>
+          <input
+            type="text"
+            placeholder="e.g. +27 234 567 6890"
+            :class="{ redBorder: emptyField }"
+          />
+        </label>
+      </div>
+      <NuxtLink to="/step-2" class="nxtBtn">Next Step</NuxtLink>
     </form>
   </section>
 </template>
@@ -139,47 +141,58 @@ section {
   form {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
     width: 100%;
-    align-items: end;
-    label {
-      width: 30rem;
-      .label {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.3rem;
-        p {
-          font-weight: 400;
-          color: $marineBlue;
-          font-size: 1rem;
+    height: 32rem;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .label-container {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+
+      label {
+        width: 30rem;
+        .label {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 0.3rem;
+          p {
+            font-weight: 400;
+            color: $marineBlue;
+            font-size: 1rem;
+          }
+          .warning {
+            color: $strawberryRed;
+            font-weight: 500;
+          }
         }
-        .warning {
-          color: $strawberryRed;
+
+        input {
+          width: 100%;
+          padding: 0.8rem;
+          border-radius: 8px;
+          font-size: 1.1rem;
+          border: none;
+          border: 1px solid $lightGray;
           font-weight: 500;
-        }
-      }
+          color: $marineBlue;
+          outline: none;
+          transition: 0.4s ease all;
 
-      input {
-        width: 100%;
-        padding: 0.8rem;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        border: none;
-        border: 1px solid $lightGray;
-        font-weight: 500;
-        color: $marineBlue;
-        outline: none;
-        transition: .4s ease all;
-
-        &:focus {
-          border: 1px solid $purplishBlue;
+          &:focus {
+            border: 1px solid $purplishBlue;
+          }
         }
       }
     }
+
     .nxtBtn {
-      margin-top: 9rem;
-      width: fit-content;
+      height: fit-content;
+      width: width;
       padding-inline: 1.7rem;
       padding-block: 0.8rem;
       border: none;
@@ -189,7 +202,7 @@ section {
       font-size: 1.1rem;
       border-radius: 12px;
       transition: 0.4s ease all;
-      
+
       &:hover {
         filter: brightness(140%);
       }
