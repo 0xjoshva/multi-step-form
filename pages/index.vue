@@ -15,6 +15,7 @@
             type="text"
             placeholder="e.g. Stephen King"
             :class="{ redBorder: emptyField }"
+            v-model="name"
           />
         </label>
         <label for="email">
@@ -27,6 +28,7 @@
             type="email"
             placeholder="e.g. stephenking@lorem.com"
             :class="{ redBorder: emptyField }"
+            v-model="email"
           />
         </label>
         <label for="pnumber">
@@ -38,6 +40,7 @@
             type="text"
             placeholder="e.g. +27 234 567 6890"
             :class="{ redBorder: emptyField }"
+            v-model="pnumber"
           />
         </label>
       </div>
